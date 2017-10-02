@@ -35,9 +35,19 @@ void BST::Transplant(Node *u, Node *v)
         
 }
 
+// Pseudocode found on page 292.
 Node *BST::Successor(Node *x) 
 {
+        if (x -> right != NULL)
+                return Minimum(x -> right);
         
+        Node * y = x -> parent;
+        
+        while (y != NULL && x == y -> right)
+        {
+                x = y;
+                y = y -> parent;
+        }
 }
 
 // Pseudocode found on 291.
@@ -107,7 +117,6 @@ void BST::PreOrder(Node *x)
 // Pseudocode found on page 288.
 void BST::InOrder(Node *x) 
 {
-        // Print as long as the current node is not NULL.
         if (x != NULL)
         {
                 InOrder(x -> left);
