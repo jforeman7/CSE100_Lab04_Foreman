@@ -37,7 +37,7 @@ void BST::Insert(int toInsert)
         {
                 y = x;
                 
-                if (toInsert < x -> key)
+                if (toInsert < x -> val)
                         x = x -> left;
                 else
                         x = x -> right;
