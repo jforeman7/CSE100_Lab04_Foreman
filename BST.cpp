@@ -22,7 +22,39 @@ BST::~BST()
 
 void BST::Insert(int toInsert) 
 {
+        Node * y = NULL;
+        Node * x = root;
         
+        // Create the new node.
+        Node * z;
+        z -> val = toInsert;
+        z -> left = NULL;
+        z -> right = NULL;
+        
+        // Find an empty position in the tree while following...
+        // the properties of a Binary Search Tree.
+        while (x != NULL)
+        {
+                y = x;
+                
+                if (toInsert < x -> key)
+                        x = x -> left;
+                else
+                        x = x -> right;
+        }
+        
+        z -> parent = y;
+        
+        // If y is still NULL, then the new node is the new root.
+        if (y == NULL)
+                root = z;
+        
+        // If its not the root, then place it in the appropriate position...
+        // in relation to y, its parent.
+        else if (z -> val < y -> val)
+                y -> left = z;
+        else 
+                y -> right = z;
 }
 
 void BST::Delete(int toDelete) 
