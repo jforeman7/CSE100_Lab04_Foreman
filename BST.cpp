@@ -4,8 +4,6 @@
 
 using namespace std;
 
-// Git pull test
-
 /****************************************************************
  * CONSTRUCTOR
  *   Creates an empty binary tree
