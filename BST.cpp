@@ -50,9 +50,26 @@ Node *BST::Maximum(Node *x)
         
 }
 
+// Pseudocode found on page 290.
 Node *BST::Search(int toFind) 
 {
+        // Set a temporary node to the root of the tree to begin.
+        Node * x = root;
         
+        // If the node is null, no solution and therefore returns null.
+        // If the value of the node matches the key we are looking for...
+        // Then we found the node we are looking for.
+        while (x != NULL && toFind != x -> val)
+        {
+                // If the key is less than the current node, then it is to the left.
+                // If it is greater than, then it is to the right.
+                if (toFind < x -> val)
+                        x = x -> left;
+                else
+                        x = x -> right;
+        }
+        
+        return x;
 }
 
 void BST::Print(TraversalOrder Order) 
