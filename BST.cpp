@@ -40,14 +40,26 @@ Node *BST::Successor(Node *x)
         
 }
 
+// Pseudocode found on 291.
 Node *BST::Minimum(Node *x) 
 {
+        // Since the BST property guarantees the minimum is to the leftmost node...
+        // Just iterate to said node.
+        while (x -> left != NULL)
+                x = x -> left;
         
+        return x;
 }
 
+// Pseudocode found on 291.
 Node *BST::Maximum(Node *x) 
 {
+        // Since the BST property guarantees the maximum is to the rightmost node...
+        // Just iterate to said node.
+        while (x -> right != NULL)
+                x = x -> right;
         
+        return x;
 }
 
 // Pseudocode found on page 290.
