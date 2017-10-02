@@ -1,3 +1,9 @@
+// Jeff Foreman
+// CSE 100 04L
+// Created on 2 Oct 2017
+// Referenced pseudocode found in:
+// "Introduction To Algorithms" by Cormen, Leiserson, Rivest, and Stein
+
 #include <iostream>
 #include <string>
 #include "BST.h"
