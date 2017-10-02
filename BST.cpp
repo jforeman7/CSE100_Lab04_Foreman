@@ -67,16 +67,33 @@ void BST::Print(TraversalOrder Order)
 
 void BST::PreOrder(Node *x) 
 {
-        
+        if (x != NULL)
+        {
+                cout << x -> val << endl;
+                PreOrder(x -> left);
+                PreOrder(x -> right);
+        }
 }
 
+// Pseudocode found on page 288.
 void BST::InOrder(Node *x) 
 {
-        
+        // Print as long as the current node is not NULL.
+        if (x != NULL)
+        {
+                InOrder(x -> left);
+                cout << x -> val << endl;
+                InOrder(x -> right);
+        }
 }
 
 void BST::PostOrder(Node *x) 
 {
-        
+        if (x != NULL)
+        {
+                PostOrder(x -> left);
+                PostOrder(x -> right);
+                cout << x -> val << endl;
+        }
 }
 
