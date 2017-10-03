@@ -64,7 +64,15 @@ void BST::Delete(int toDelete)
 
 void BST::Transplant(Node *u, Node *v) 
 {
+        if (u -> parent == NULL)
+                root = v;
+        else if (u == u -> parent -> left)
+                u -> parent -> left = v;
+        else
+                u -> parent -> right = v;
         
+        if (v != NULL)
+                v -> parent = u -> parent;
 }
 
 // Pseudocode found on page 292.
