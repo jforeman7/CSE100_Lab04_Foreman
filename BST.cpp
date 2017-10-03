@@ -20,6 +20,11 @@ BST::~BST()
         
 }
 
+void BST::destroyTree(Node* x)
+{
+        
+}
+
 void BST::Insert(int toInsert) 
 {
         Node * y = NULL;
