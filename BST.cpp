@@ -28,7 +28,7 @@ void BST::Insert(int toInsert)
         Node * x = root;
         
         // Create the new node.
-        Node * z;
+        Node * z = new Node();
         z -> val = toInsert;
         z -> left = NULL;
         z -> right = NULL;
@@ -59,9 +59,30 @@ void BST::Insert(int toInsert)
                 y -> right = z;
 }
 
+// Pseudocode found on page 298.
 void BST::Delete(int toDelete) 
 {
+        Node * z = Search(toDelete);
         
+        if (z -> left == NULL)
+                Transplant(z, z->right);
+        else if (z -> right == NULL)
+                Transplant(z, z->left);
+        else
+        {
+                Node * y = Minimum(z -> right);
+                
+                if (y -> parent != z)
+                {
+                        Transplant(y, y -> right);
+                        y -> right = z -> right;
+                        y -> right -> parent = y;
+                }
+                
+                Transplant(z, y);
+                y -> left = z -> left;
+                y -> left -> parent = y;
+        }
 }
 
 void BST::Transplant(Node *u, Node *v) 
