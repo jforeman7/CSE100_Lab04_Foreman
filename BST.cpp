@@ -10,17 +10,14 @@
 
 using namespace std;
 
+void BST::destroyTree(Node* x);
+
 BST::BST() 
 {
         root = NULL;
 }
 
 BST::~BST() 
-{
-        
-}
-
-void BST::destroyTree(Node* x)
 {
         
 }
