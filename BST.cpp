@@ -83,6 +83,7 @@ void BST::Delete(int toDelete)
                 y -> left = z -> left;
                 y -> left -> parent = y;
         }
+        delete z;
 }
 
 void BST::Transplant(Node *u, Node *v) 
