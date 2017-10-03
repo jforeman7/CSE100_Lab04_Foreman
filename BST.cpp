@@ -12,10 +12,7 @@ using namespace std;
 
 BST::BST() 
 {
-        root = new Node();
-        root -> parent = NULL;
-        root -> left = NULL;
-        root -> right = NULL;
+        root = NULL;
 }
 
 BST::~BST() 
