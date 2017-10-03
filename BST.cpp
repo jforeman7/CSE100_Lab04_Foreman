@@ -10,8 +10,6 @@
 
 using namespace std;
 
-void BST::destroyTree(Node* x);
-
 BST::BST() 
 {
         root = NULL;
@@ -88,6 +86,7 @@ void BST::Delete(int toDelete)
         }
 }
 
+// Pseudocode found on page 296.
 void BST::Transplant(Node *u, Node *v) 
 {
         if (u -> parent == NULL)
