@@ -12,7 +12,6 @@ using namespace std;
 
 BST::BST() 
 {
-        root -> parent = NULL;
         root -> left = NULL;
         root -> right = NULL;
 }
