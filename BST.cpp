@@ -62,6 +62,9 @@ void BST::Delete(int toDelete)
 {
         Node * z = Search(toDelete);
         
+        if (z == NULL)
+                return;
+        
         if (z -> left == NULL)
                 Transplant(z, z->right);
         else if (z -> right == NULL)
@@ -81,7 +84,6 @@ void BST::Delete(int toDelete)
                 y -> left = z -> left;
                 y -> left -> parent = y;
         }
-        delete z;
 }
 
 void BST::Transplant(Node *u, Node *v) 
